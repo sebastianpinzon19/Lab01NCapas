@@ -1,0 +1,52 @@
+﻿@model Entities.Models.Product
+
+@{
+    ViewData["Title"] = "Delete Product";
+}
+<h1>Delete Product</h1>
+
+<h4>Product</h4>
+<hr />
+<dl class="row">
+    <dt class="col-sm-2">
+        ID
+    </dt>
+    <dd class="col-sm-10">
+        @Model.Id
+    </dd>
+    <dt class="col-sm-2">
+        Product Name
+    </dt>
+    <dd class="col-sm-10">
+        @Model.ProductName
+    </dd>
+    <dt class="col-sm-2">
+        Supplier ID
+    </dt>
+    <dd class="col-sm-10">
+        @Model.SupplierId
+    </dd>
+    <dt class="col-sm-2">
+        Unit Price
+    </dt>
+    <dd class="col-sm-10">
+        @Model.UnitPrice
+    </dd>
+    <dt class="col-sm-2">
+        Package
+    </dt>
+    <dd class="col-sm-10">
+        @Model.Package
+    </dd>
+    <dt class="col-sm-2">
+        Is Discontinued
+    </dt>
+    <dd class="col-sm-10">
+        @Model.IsDiscontinued
+    </dd>
+</dl>
+<form asp-controller="Products" asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</button>
+    <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back to List</a>
+</form>
