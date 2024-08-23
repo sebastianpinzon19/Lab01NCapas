@@ -1,0 +1,54 @@
+﻿@model Entities.Models.Product
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<h1>Product Details</h1>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            ID
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Id
+        </dd>
+        <dt class="col-sm-2">
+            Product Name
+        </dt>
+        <dd class="col-sm-10">
+            @Model.ProductName
+        </dd>
+        <dt class="col-sm-2">
+            Supplier ID
+        </dt>
+        <dd class="col-sm-10">
+            @Model.SupplierId
+        </dd>
+        <dt class="col-sm-2">
+            Unit Price
+        </dt>
+        <dd class="col-sm-10">
+            @Model.UnitPrice
+        </dd>
+        <dt class="col-sm-2">
+            Package
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Package
+        </dd>
+        <dt class="col-sm-2">
+            Is Discontinued
+        </dt>
+        <dd class="col-sm-10">
+            @Model.IsDiscontinued
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</a>
+    <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back to List</a>
+</div>
